@@ -16,3 +16,9 @@ INSERT INTO inscripciones (alumno_id, curso_id, fecha_inscripcion) VALUES
 ('6', '2', '2001-09-11'),
 ('7', '5', '2004-10-13')
 
+INSERT INTO cursos (nombre, duracion, numero_asignaturas) VALUES 
+('tecnologico', '200', '6'),
+('biosanitario', '200', '7'),
+('sociales', '200', '5'),
+('artes artisticas', '200', '4'),
+('artes plasticas', '200', '4');
