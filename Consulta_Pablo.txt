@@ -1,0 +1,14 @@
+-- Alumnos apuntados a cursos con más de 6 asignaturas --
+
+SELECT
+	a.nombre,
+	a.apellidos,
+	c.nombre,
+	c.numero_asignaturas
+FROM alumnos AS a
+INNER JOIN inscripciones AS i
+	ON a.alumno_id = i.alumno_id
+INNER JOIN cursos AS c
+	ON i.curso_id = c.curso_id
+WHERE numero_asignaturas > 6
+ORDER BY c.numero_asignaturas DESC
