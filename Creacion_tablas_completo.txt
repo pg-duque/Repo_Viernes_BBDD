@@ -1,0 +1,42 @@
+-- CREATION TABLAS PLATAFORMA EDUCATIVA ---
+
+-- TABLA ALUMNOS --
+
+/*Contiene información sobre los alumnos*/
+
+DROP TABLE IF EXISTS alumnos CASCADE;
+CREATE TABLE alumnos (
+	alumno_id SERIAL PRIMARY KEY,
+	nombre VARCHAR(50) NOT NULL,
+	apellidos VARCHAR(150) NOT NULL
+);
+
+-- TABLA CURSOS --
+
+/*Contiene información sobre los cursos*/
+
+
+DROP TABLE IF EXISTS Cursos CASCADE;
+CREATE TABLE Cursos (
+	curso_id SERIAL PRIMARY KEY,
+	nombre VARCHAR(100) NOT NULL,
+	duracion NUMERIC NOT NULL,
+	numero_asignaturas INT NOT NULL 
+);
+
+-- TABLA INSCRIPCIONES --
+
+/*Contiene información de los detalles de las inscripciones*/
+
+DROP TABLE IF EXISTS inscripciones CASCADE;
+CREATE TABLE inscripciones (
+    inscripcion_id SERIAL PRIMARY KEY,
+	alumno_id INT NOT NULL,
+    curso_id INT NOT NULL,
+    fecha_inscripcion DATE NOT NULL
+);
+
+/*Añado claves foráneas*/
+ALTER TABLE inscripciones ADD CONSTRAINT FK_inscripcion_alumno FOREIGN KEY (alumno_id)   REFERENCES alumnos (alumno_id);
+
+ALTER TABLE inscripciones ADD CONSTRAINT FK_inscripcion_curso FOREIGN KEY (curso_id) REFERENCES cursos (curso_id);
