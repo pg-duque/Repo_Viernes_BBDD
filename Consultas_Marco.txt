@@ -1,0 +1,14 @@
+/*Alumnos que se hayan inscrito antes de x año*/
+SELECT
+	*
+FROM alumnos AS a
+INNER JOIN inscripciones AS i
+	ON a.alumno_id=i.alumno_id
+WHERE i.fecha_inscripcion< '2005'
+ORDER BY a.nombre;
+
+/*Cursos que tengan más de 3 asignaturas*/
+SELECT
+	*
+FROM cursos AS 
+WHERE numero_asignaturas>3;
