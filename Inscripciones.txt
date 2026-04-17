@@ -1,0 +1,13 @@
+/*Contiene informacion de los detalles de la compra*/
+DROP TABLE IF EXISTS inscripciones CASCADE;
+CREATE TABLE inscripciones (
+    inscripcion_id SERIAL PRIMARY KEY,
+	alumno_id INT NOT NULL,
+    curso_id INT NOT NULL,
+    fecha_inscripcion DATE NOT NULL
+);
+
+/*Añado claves foráneas*/
+ALTER TABLE inscripciones ADD CONSTRAINT FK_inscripcion_alumno FOREIGN KEY (alumno_id)   REFERENCES alumnos (alumno_id);
+
+ALTER TABLE inscripciones ADD CONSTRAINT FK_inscripcion_curso FOREIGN KEY (curso_id) REFERENCES cursos (curso_id);
