@@ -1,0 +1,6 @@
+INSERT INTO cursos (nombre, duracion, numero_asignaturas) VALUES 
+('tecnologico', '200', '6'),
+('biosanitario', '200', '7'),
+('sociales', '200', '5'),
+('artes artisticas', '200', '4'),
+('artes plasticas', '200', '4');
