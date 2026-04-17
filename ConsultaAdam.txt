@@ -1,0 +1,11 @@
+/*Obtener alumnos inscritos en el curso de */
+
+SELECT
+	a.nombre,
+	a.apellido,
+	c.nombre,
+	i.fecha_inscripcion
+FROM alumnos AS a
+INNER JOIN inscripciones AS i ON a.alumno_id = i.alumno_id
+INNER JOIN cursos AS c ON i.curso_id = c.curso_id
+WHERE c.nombre = '';
