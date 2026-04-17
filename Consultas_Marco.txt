@@ -10,5 +10,5 @@ ORDER BY a.nombre;
 /*Cursos que tengan más de 3 asignaturas*/
 SELECT
 	*
-FROM cursos AS 
+FROM cursos 
 WHERE numero_asignaturas>3;
